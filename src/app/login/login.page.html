@@ -1,24 +1,67 @@
 <!--<div class="container">-->
-<!--<form class="form-signin">-->
-<!--&lt;!&ndash;<label for="username" class="sr-only">Username</label>&ndash;&gt;-->
-<!--<input type="text" id="username" class="form-control mb-4" placeholder="Username" required autofocus>-->
-
-<!--&lt;!&ndash;<label for="password" class="sr-only">Username</label>&ndash;&gt;-->
-<!--<input type="password" id="password" class="form-control" placeholder="Password" required>-->
-<!--</form>-->
+<!--<div class="card" style="width: 50%">-->
+<!--<div class="card-body">Sign in to your dashboard</div>-->
+<!--<div class="form-group col-md-12">-->
+<!--<input type="text"-->
+<!--id="username"-->
+<!--class="form-control mb-2"-->
+<!--placeholder="Username">-->
 <!--</div>-->
 
-<div class="container">
-  <div class="card" style="width: 50%">
-    <div class="card-body">Sign in to your dashboard</div>
-    <div class="form-group col-md-12">
-      <input type="text" id="username" class="form-control mb-2" placeholder="Username">
-    </div>
+<!--<div class="form-group col-md-12">-->
+<!--<input type="password"-->
+<!--id="password"-->
+<!--class="form-control mb-2"-->
+<!--placeholder="Password">-->
+<!--</div>-->
+<!--<div class="text-left">-->
+<!--<button type="submit"-->
+<!--(click)="login()"-->
+<!--class="btn btn-primary ml-3 mb-4">Sign in-->
+<!--</button>-->
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->
 
-    <div class="form-group col-md-12">
-      <input type="password" id="password" class="form-control mb-2" placeholder="Password">
-    </div>
-    <div class="text-left">
-    </div>
-  </div>
-</div>
+<!--<div class="container">-->
+<!--<div class="card card-body" style="width: 50%">-->
+<!--<div class="card-body">Sign in to your dashboard</div>-->
+<!--<form>-->
+<!--<div class="form-group">-->
+<!--<input type="email"-->
+<!--class="form-control"-->
+<!--id="username"-->
+<!--aria-describedby="username"-->
+<!--placeholder="Username">-->
+<!--</div>-->
+<!--<div class="form-group">-->
+<!--<input type="password"-->
+<!--class="form-control"-->
+<!--id="password"-->
+<!--placeholder="Password">-->
+<!--</div>-->
+
+<!--</form>-->
+<!--<button type="submit"-->
+<!--class="btn btn-primary col-md-4"-->
+<!--(click)="submit()">Submit</button>-->
+<!--</div>-->
+<!--</div>-->
+
+<form [formGroup]="form" class="form-signin text-center">
+  <h1 class="h4 mb-3 font-weight-normal">Sign in to your dashboard</h1>
+  <label class="sr-only" for="inputEmail">Username</label>
+  <input autofocus="" class="form-control"
+         formControlName="username"
+         id="inputEmail"
+         placeholder="Email address"
+         required=""
+         type="text">
+  <label class="sr-only" for="inputPassword">Password</label>
+  <input class="form-control" formControlName="password"
+         id="inputPassword"
+         placeholder="Password"
+         required=""
+         type="password">
+  <button (click)="submit()" class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+</form>
