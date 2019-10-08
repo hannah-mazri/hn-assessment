@@ -1,4 +1,4 @@
-import {Component, NgZone, OnInit} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {DashboardService} from '../services/dashboard.service';
 import {AuthenticationService} from '../services/authentication.service';
 
@@ -24,7 +24,6 @@ export class DashboardPage implements OnInit {
         this.tableUsers = data.tableUsers;
       })
       .catch(err => {
-
       });
   }
 

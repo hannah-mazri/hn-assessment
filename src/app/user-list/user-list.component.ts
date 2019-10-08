@@ -1,18 +1,23 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 
 @Component({
-  selector: 'app-user-list',
+  selector: 'aem-user-list',
   templateUrl: './user-list.component.html',
   styleUrls: ['./user-list.component.css']
 })
 export class UserListComponent implements OnInit {
 
+  @Input() tableUsers = [];
   columns = [
+    {header: '#'},
+    {header: 'First'},
+    {header: 'Last'},
+    {header: 'Username'},
   ];
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit() {
   }
-
 }

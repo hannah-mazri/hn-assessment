@@ -11,6 +11,9 @@ import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {appRoutes} from './app.route';
 import {JwtInterceptor} from './interceptors/jwt.interceptor';
 import {UserListComponent} from './user-list/user-list.component';
+import {ChartDoughnutComponent} from './dashboard/chart-doughnut.component';
+import {ChartBarComponent} from './dashboard/chart-bar.component';
+import { ChartsModule } from 'ng2-charts'
 
 @NgModule({
   declarations: [
@@ -18,6 +21,9 @@ import {UserListComponent} from './user-list/user-list.component';
     LoginPage,
     DashboardPage,
     UserListComponent,
+    ChartBarComponent,
+    ChartDoughnutComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -25,6 +31,7 @@ import {UserListComponent} from './user-list/user-list.component';
     FormsModule,
     HttpClientModule,
     NgbModule,
+    ChartsModule,
     RouterModule.forRoot(appRoutes)
   ],
   providers: [

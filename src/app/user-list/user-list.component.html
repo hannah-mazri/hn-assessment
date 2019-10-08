@@ -1,35 +1,18 @@
-<div class="container mb-2">
-  <b>User List</b>
-</div>
-
 <div class="container">
   <table class="table table-bordered">
     <thead>
     <tr>
-      <th scope="col">#</th>
-      <th scope="col">First</th>
-      <th scope="col">Last</th>
-      <th scope="col">User Name</th>
+      <th *ngFor="let col of columns">
+        {{ col.header }}
+      </th>
     </tr>
     </thead>
-    <tbody *ngFor="let col of columns">
+    <tbody *ngFor="let user of tableUsers">
     <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Throton</td>
-      <td>@fat</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>Larry</td>
-      <td>theBird</td>
-      <td>@twitter</td>
+      <td>#</td>
+      <td>{{ user.firstName }}</td>
+      <td>{{ user.lastName }}</td>
+      <td>{{ user.username }}</td>
     </tr>
     </tbody>
   </table>
