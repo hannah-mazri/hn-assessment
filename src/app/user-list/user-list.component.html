@@ -7,9 +7,9 @@
       </th>
     </tr>
     </thead>
-    <tbody *ngFor="let user of tableUsers">
-    <tr>
-      <td>#</td>
+    <tbody>
+    <tr *ngFor="let user of tableUsers; let ndx = index">
+      <td>{{ ndx + 1 }}</td>
       <td>{{ user.firstName }}</td>
       <td>{{ user.lastName }}</td>
       <td>{{ user.username }}</td>
