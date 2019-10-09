@@ -1,6 +1,5 @@
 import {Component, OnInit} from '@angular/core';
 import {DashboardService} from '../services/dashboard.service';
-import {AuthenticationService} from '../services/authentication.service';
 
 @Component({
   selector: 'aem-dashboard',
@@ -8,28 +7,19 @@ import {AuthenticationService} from '../services/authentication.service';
 })
 export class DashboardPage implements OnInit {
 
-  chartBars: any[];
-  chartDonuts: any[];
+  isDashboard;
   tableUsers: any[];
 
-  constructor(private dashboardService: DashboardService,
-              private authenticationService: AuthenticationService,) {
+  constructor(private dashboardService: DashboardService) {
   }
 
   ngOnInit() {
+    this.isDashboard = true;
     this.dashboardService.getData()
       .then(data => {
-        this.chartBars = data.chartBar;
-        console.log('chartbar ', this.chartBars);
-
-        this.chartDonuts = data.chartDonut;
         this.tableUsers = data.tableUsers;
       })
       .catch(err => {
       });
-  }
-
-  logout() {
-    this.authenticationService.logout();
   }
 }

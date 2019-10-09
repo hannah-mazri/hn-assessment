@@ -14,16 +14,17 @@ import {UserListComponent} from './user-list/user-list.component';
 import {ChartDoughnutComponent} from './dashboard/chart-doughnut.component';
 import {ChartBarComponent} from './dashboard/chart-bar.component';
 import { ChartsModule } from 'ng2-charts'
+import {AppTopnavComponent} from './app.topnav.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    AppTopnavComponent,
     LoginPage,
     DashboardPage,
     UserListComponent,
     ChartBarComponent,
     ChartDoughnutComponent,
-
   ],
   imports: [
     BrowserModule,

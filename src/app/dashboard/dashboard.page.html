@@ -1,26 +1,26 @@
-<button class="btn btn-primary" type="button" (click)="logout()">Logout</button>
+<app-topbar [isDashboard]="isDashboard"></app-topbar>
 
-<div class="container mb-2">
-  <b>Overview</b>
-</div>
+<div class="container mt-5"><b>Overview</b></div>
 
 <div class="container mb-5">
   <div class="row">
     <div class="col col-md-6">
       <div class="card">
-        <p class="card-header">Card Title 1</p>
-          <aem-chart-doughnut class="mb-4"></aem-chart-doughnut>
+        <p class="card-header">Chart 1: Doughnut Chart</p>
+        <aem-chart-doughnut class="mb-4"></aem-chart-doughnut>
       </div>
     </div>
 
     <div class="col col-md-6">
       <div class="card">
-        <p class="card-header">Card Title 2</p>
+        <div class="card-header">Chart 2: Bar Chart</div>
         <aem-chart-bar class="mb-4"></aem-chart-bar>
       </div>
     </div>
   </div>
 </div>
+
+<div class="container mb-2"><b>User List</b></div>
 
 <aem-user-list
   [tableUsers]="tableUsers">
