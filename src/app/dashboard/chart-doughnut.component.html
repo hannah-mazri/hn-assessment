@@ -2,6 +2,8 @@
   <div>
     <div style="display: block">
       <canvas baseChart
+              (chartClick)="chartClicked($event)"
+              (chartHover)="chartHovered($event)"
               [colors]="color"
               [data]="doughnutChartData"
               [labels]="doughnutChartLabels"

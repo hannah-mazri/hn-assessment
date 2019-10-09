@@ -2,6 +2,8 @@
   <div>
     <div style="display: block">
       <canvas baseChart
+              (chartClick)="chartClicked($event)"
+              (chartHover)="chartHovered($event)"
               [colors]="colors"
               [datasets]="barChartData"
               [labels]="barChartLabels"
@@ -10,8 +12,6 @@
               [chartType]="barChartType">
       </canvas>
     </div>
-    <button class="btn btn-sm btn-primary ml-2" (click)="randomize()">Update</button>
+    <button class="btn btn-sm btn-dark ml-2" (click)="randomize()">Update</button>
   </div>
 </div>
-
-<!--[plugins]="barChartPlugins"-->

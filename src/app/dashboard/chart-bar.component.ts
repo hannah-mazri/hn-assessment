@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { ChartOptions, ChartType} from 'chart.js';
-// import * as pluginDataLabels from 'chartjs-plugin-datalabels';
 import {Label} from 'ng2-charts';
 import {DashboardService} from '../services/dashboard.service';
 
@@ -9,6 +8,8 @@ import {DashboardService} from '../services/dashboard.service';
   templateUrl: './chart-bar.component.html',
 })
 export class ChartBarComponent implements OnInit {
+  chartBars: any[];
+  data: any[];
 
   public barChartOptions: ChartOptions = {
     responsive: true,
@@ -36,66 +37,46 @@ export class ChartBarComponent implements OnInit {
       }
     }
   };
-  chartBars: any[];
 
   public barChartLabels: Label[] = [];
   public barChartData: any[] = [
-    {
-      data: [5], label: 'Bar 1'
-    },
-    {
-      data: [4], label: 'Bar 2'
-    },
-    {
-      data: [8], label: 'Bar 3'
-    }
-  ];
+    {data: [], label: ['Value']}];
 
   public barChartType: ChartType = 'bar';
   public barChartLegend = true;
-  // public barChartPlugins = [pluginDataLabels];
-
 
   constructor(private dashboardService: DashboardService) { }
 
   ngOnInit() {
-    // this.dashboardService.getData()
-    //   .then(data => {
-    //     this.chartBars = data.chartBar;
-    //
-    //     this.barChartLabels = this.chartBars.map(item => item.name);
-    //     this.barChartData = this.chartBars.map(item => item.value);
-    //
-    //   })
-    //   .catch(err => {
-    //   });
+    this.dashboardService.getData()
+      .then(data => {
+        this.chartBars = data.chartBar;
+        this.barChartLabels = this.chartBars.map(item => item.name);
+        this.barChartData[0].data = this.chartBars.map(item => item.value);
+      })
+      .catch(err => {
+      });
   }
 
-  public colors = [
-    { backgroundColor: ["#DFA8E4"] },
-    { backgroundColor: ["#934379"] },
-    { backgroundColor: ["#C27AC0"] },
-  ];
+  public colors = [{backgroundColor: "#D27C7B"}];
 
   // events
   public chartClicked({ event, active }: { event: MouseEvent, active: {}[] }): void {
-    console.log(event, active);
   }
 
   public chartHovered({ event, active }: { event: MouseEvent, active: {}[] }): void {
-    console.log(event, active);
   }
 
   public randomize(): void {
-    // // Only Change 3 values
-    // const data = [
-    //   Math.round(Math.random() * 100),
-    //   59,
-    //   80,
-    //   (Math.random() * 100),
-    //   56,
-    //   (Math.random() * 100),
-    //   40];
-    // this.barChartData[0].data = data;
+    // Only Change 3 values
+    const data = [
+      Math.round(Math.random() * 100),
+      59,
+      80,
+      (Math.random() * 100),
+      56,
+      (Math.random() * 100),
+      40];
+    this.barChartData[0].data = data;
   }
 }
