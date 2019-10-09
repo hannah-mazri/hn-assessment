@@ -20,6 +20,8 @@ export class DashboardPage implements OnInit {
     this.dashboardService.getData()
       .then(data => {
         this.chartBars = data.chartBar;
+        console.log('chartbar ', this.chartBars);
+
         this.chartDonuts = data.chartDonut;
         this.tableUsers = data.tableUsers;
       })
