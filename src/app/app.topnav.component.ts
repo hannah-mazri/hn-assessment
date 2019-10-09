@@ -10,13 +10,13 @@ import {AuthenticationService} from './services/authentication.service';
         <a class="navbar-brand" [routerLink]="['/home']">ASSESSMENT</a>
           <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-              <a class="nav-link" [routerLink]="['/home']" [style.display]="isDashboard ? '' : 'none'">Home <span class="sr-only">(current)</span></a>
+              <a class="nav-link" [routerLink]="['/home']" [style.display]="isDashboard ? '' : 'none'">Hello, {{ username }}!<span class="sr-only">(current)</span></a>
             </li>
           </ul>
           <button class="btn btn-dark"
                   type="button"
                   [style.display]="isDashboard ? '' : 'none'"
-                  (click)="logout()">Logout</button>
+                  (click)="logout()">Sign out</button>
     </nav>
   `
 })
@@ -24,6 +24,7 @@ import {AuthenticationService} from './services/authentication.service';
 export class AppTopnavComponent implements OnInit, OnDestroy {
 
   @Input() isDashboard: boolean;
+  username = 'user@aemenersol.com';
   destroy$: Subject<any> = new Subject<any>();
 
   constructor(private authenticationService: AuthenticationService) {

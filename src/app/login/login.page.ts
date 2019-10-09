@@ -7,10 +7,7 @@ import {ErrorType} from './error-type.enum';
 @Component({
   selector: 'aem-login',
   templateUrl: './login.page.html',
-  styles: [
-    `.error-msg {
-      color: red;
-    }`]
+  styleUrls: ['./login.page.css']
 })
 export class LoginPage implements OnInit {
 
