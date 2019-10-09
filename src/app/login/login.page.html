@@ -1,67 +1,29 @@
-<!--<div class="container">-->
-<!--<div class="card" style="width: 50%">-->
-<!--<div class="card-body">Sign in to your dashboard</div>-->
-<!--<div class="form-group col-md-12">-->
-<!--<input type="text"-->
-<!--id="username"-->
-<!--class="form-control mb-2"-->
-<!--placeholder="Username">-->
-<!--</div>-->
+<app-topbar [isDashboard]="isDashboard"></app-topbar>
+<form [formGroup]="form" class="form-signin text-center mt-lg-5" style="padding-top: 5em">
+  <h1 class="h4 mb-3 font-weight-normal">ADMIN LOGIN</h1>
+  <h6 class="h6 mb-3 font-weight-normal">Sign in to your dashboard</h6>
 
-<!--<div class="form-group col-md-12">-->
-<!--<input type="password"-->
-<!--id="password"-->
-<!--class="form-control mb-2"-->
-<!--placeholder="Password">-->
-<!--</div>-->
-<!--<div class="text-left">-->
-<!--<button type="submit"-->
-<!--(click)="login()"-->
-<!--class="btn btn-primary ml-3 mb-4">Sign in-->
-<!--</button>-->
-<!--</div>-->
-<!--</div>-->
-<!--</div>-->
+  <div *ngIf="errorType == 'CONNECTION_FAILED'" class="error-msg">Unable to connect!</div>
+  <div *ngIf="errorType == 'UNAUTHORIZED'" class="error-msg">Bad Credentials!</div>
 
-<!--<div class="container">-->
-<!--<div class="card card-body" style="width: 50%">-->
-<!--<div class="card-body">Sign in to your dashboard</div>-->
-<!--<form>-->
-<!--<div class="form-group">-->
-<!--<input type="email"-->
-<!--class="form-control"-->
-<!--id="username"-->
-<!--aria-describedby="username"-->
-<!--placeholder="Username">-->
-<!--</div>-->
-<!--<div class="form-group">-->
-<!--<input type="password"-->
-<!--class="form-control"-->
-<!--id="password"-->
-<!--placeholder="Password">-->
-<!--</div>-->
-
-<!--</form>-->
-<!--<button type="submit"-->
-<!--class="btn btn-primary col-md-4"-->
-<!--(click)="submit()">Submit</button>-->
-<!--</div>-->
-<!--</div>-->
-
-<form [formGroup]="form" class="form-signin text-center">
-  <h1 class="h4 mb-3 font-weight-normal">Sign in to your dashboard</h1>
-  <label class="sr-only" for="inputEmail">Username</label>
-  <input autofocus="" class="form-control"
+  <label class="sr-only" for="username">Username</label>
+  <input autofocus=""
+         class="form-control mb-3"
          formControlName="username"
-         id="inputEmail"
-         placeholder="Email address"
+         id="username"
+         placeholder="Username"
          required=""
          type="text">
-  <label class="sr-only" for="inputPassword">Password</label>
-  <input class="form-control" formControlName="password"
-         id="inputPassword"
+  <label class="sr-only" for="password">Password</label>
+  <input class="form-control"
+         formControlName="password"
+         id="password"
          placeholder="Password"
          required=""
          type="password">
-  <button (click)="submit()" class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+  <button [disabled]="!form.valid || isLoading"
+          (click)="submit()"
+          class="btn btn-lg btn-primary btn-block"
+          type="submit">Sign in
+  </button>
 </form>

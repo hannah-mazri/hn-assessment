@@ -13,7 +13,7 @@ export class AuthenticationService {
   }
 
   login(username: string, password: string) {
-    this.http.post(this.LOGIN_URL, {username: username, password: password}, {
+    return this.http.post(this.LOGIN_URL, {username: username, password: password}, {
       headers: {
         'Content-Type': 'application/json'
       }
@@ -23,6 +23,7 @@ export class AuthenticationService {
         this.router.navigate(['/home']);
       })
       .catch(err => {
+        return err.status;
       });
   }
 
