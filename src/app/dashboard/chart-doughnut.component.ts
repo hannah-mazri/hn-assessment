@@ -29,7 +29,7 @@ export class ChartDoughnutComponent implements OnInit {
       });
   }
 
-  public color = [{backgroundColor: ["#DFA8E4", "#934379", "#72286F", "#9452A5", "#C89CE4"]}];
+  public color = [{backgroundColor: ["#ABD02B", "#30D7BB", "#ED8E0C", "#61B498", "#30D7BB"]}];
 
   // events
   public chartClicked({ event, active }: { event: MouseEvent, active: {}[] }): void {
