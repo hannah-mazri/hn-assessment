@@ -3,7 +3,7 @@ import {Subject} from 'rxjs';
 import {AuthenticationService} from './services/authentication.service';
 
 @Component({
-  selector: 'app-topbar',
+  selector: 'app-topnav',
   template: `
 
     <nav class="navbar navbar-expand-md navbar-dark bg-dark">
