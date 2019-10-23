@@ -23,7 +23,7 @@
     "@angular/router": "^6.0.3",
     "@ng-bootstrap/ng-bootstrap": "^3.3.1",
     "ajv": "^6.10.2",
-    "bootstrap": "^4.0.0",
+    "bootstrap": "^4.3.1",
     "chart.js": "^2.8.0",
     "core-js": "^2.5.4",
     "ng2-charts": "^2.2.3",
